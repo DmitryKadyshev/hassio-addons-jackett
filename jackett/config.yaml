@@ -1,12 +1,11 @@
 ---
 name: Jackett
-version: "0.24.2531"
+version: "dev"
 slug: hassio_jackett
 description: An addon to add jackett to hassio
 url: "https://github.com/DmitryKadyshev/hassio-addons-jackett"
-webui: "http://[HOST]:[PORT:9117]"
 ingress: true
-ingress_port: 0
+ingress_port: 9117
 ingress_stream: true
 panel_icon: mdi:cloud-search
 arch:
