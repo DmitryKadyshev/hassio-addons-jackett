@@ -13,4 +13,4 @@ cd /opt/Jackett || bashio::exit.nok 'Jackett installation not found!'
 # after installation or upgrade. Make it writable by the Jackett service user.
 chown -R jackett:jackett /config
 
-exec s6-setuidgid jackett ./jackett -d /config --NoUpdates
+exec s6-setuidgid jackett ./jackett -d /config --NoUpdates --port 9118
