@@ -1,4 +1,5 @@
 ARG BUILD_FROM
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -8,6 +9,7 @@ ARG JACKETT_RELEASE
 
 ENV XDG_CONFIG_HOME="/config"
 
+# hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
               libicu66 \
