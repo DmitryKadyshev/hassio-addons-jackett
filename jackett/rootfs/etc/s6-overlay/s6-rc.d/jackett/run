@@ -2,11 +2,15 @@
 # shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Jackett
-# Runs Jackett
+# Runs Jackett as an unprivileged user
 # ==============================================================================
 
 bashio::log.info 'Starting Jackett...'
 
 cd /opt/Jackett || bashio::exit.nok 'Jackett installation not found!'
 
-exec ./jackett -d /config --NoUpdates
+# The add-on config directory is a persistent volume and may be owned by root
+# after installation or upgrade. Make it writable by the Jackett service user.
+chown -R jackett:jackett /config
+
+exec s6-setuidgid jackett ./jackett -d /config --NoUpdates
