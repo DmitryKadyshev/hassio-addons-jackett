@@ -29,6 +29,3 @@ RUN apt-get update \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /etc/nginx
 
 COPY rootfs /
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
