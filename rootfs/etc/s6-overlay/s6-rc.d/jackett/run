@@ -1,0 +1,12 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Jackett
+# Runs Jackett
+# ==============================================================================
+
+bashio::log.info 'Starting Jackett...'
+
+cd /opt/Jackett || bashio::exit.nok 'Jackett installation not found!'
+
+exec ./jackett -d /config --NoUpdates
