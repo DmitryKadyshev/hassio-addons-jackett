@@ -5,7 +5,7 @@
 # Runs the Nginx ingress proxy
 # ==============================================================================
 
-bashio::net.wait_for 9117 localhost 300
+bashio::net.wait_for 9118 localhost 300
 
 bashio::log.info "Starting Nginx..."
 exec nginx
