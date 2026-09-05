@@ -1,6 +1,6 @@
 ---
 name: Jackett
-version: "dev"
+version: "0.24.2531"
 slug: hassio_jackett
 description: An addon to add jackett to hassio
 url: "https://github.com/DmitryKadyshev/hassio-addons-jackett"
