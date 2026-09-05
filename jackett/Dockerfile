@@ -16,6 +16,7 @@ RUN apt-get update \
               libssl1.1 \
               wget \
               curl \
+    && useradd --system --no-create-home --home-dir /config jackett \
     && mkdir -p /opt/Jackett \
     && if [ -z "${JACKETT_RELEASE}" ]; then \
               JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" | jq -r .tag_name); \
