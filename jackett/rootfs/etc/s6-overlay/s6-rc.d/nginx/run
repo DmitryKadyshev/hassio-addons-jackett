@@ -1,0 +1,11 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Jackett
+# Runs the Nginx ingress proxy
+# ==============================================================================
+
+bashio::net.wait_for 9117 localhost 300
+
+bashio::log.info "Starting Nginx..."
+exec nginx
