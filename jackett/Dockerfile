@@ -14,6 +14,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
               libicu66 \
               libssl1.1 \
+              nginx \
               wget \
               curl \
     && useradd --system --no-create-home --home-dir /config jackett \
@@ -29,6 +30,6 @@ RUN apt-get update \
         "https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${ARCH}.tar.gz" \
     && tar xf /tmp/jackett.tar.gz -C /opt/Jackett --strip-components=1 \
     && apt-get clean \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /etc/nginx
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 COPY rootfs /
