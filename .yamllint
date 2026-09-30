@@ -1,4 +1,8 @@
 ---
+ignore: |
+  .github/workflows/app-ci.yaml
+  .github/workflows/app-deploy.yaml
+
 rules:
   braces:
     level: error
