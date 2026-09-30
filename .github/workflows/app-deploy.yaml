@@ -79,6 +79,7 @@ jobs:
           TAG_NAME: ${{ github.event.release.tag_name }}
           IS_PRERELEASE: ${{ github.event.release.prerelease }}
           SHA: ${{ github.sha }}
+          TARGET: ${{ steps.information.outputs.target }}
         run: |
           environment="edge"
           version="${SHA:0:7}"
@@ -90,6 +91,8 @@ jobs:
             if [[ "${IS_PRERELEASE}" = "true" ]]; then
               environment="beta"
             fi
+          else
+            version="$(yq --no-colors eval '.version' "${TARGET}/config.yaml")"
           fi
 
           echo "environment=${environment}" >> "$GITHUB_OUTPUT"
