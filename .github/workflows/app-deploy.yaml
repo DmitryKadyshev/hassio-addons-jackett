@@ -177,7 +177,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: 🚀 Create and push manifest
         env:
-          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_OWNER: dmitrykadyshev
           SLUG: ${{ needs.information.outputs.slug }}
           ENVIRONMENT: ${{ needs.information.outputs.environment }}
           VERSION: ${{ needs.information.outputs.version }}
