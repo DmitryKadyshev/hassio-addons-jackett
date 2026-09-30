@@ -1,7 +1,7 @@
-# Release Drafter configuration
+---
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
-change-template: '- $TITLE (#$NUMBER)'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '<*_&'
 categories:
   - title: '🚀 Features'
@@ -17,7 +17,6 @@ categories:
       - 'chore'
       - 'dependencies'
       - 'documentation'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## Changes
 
