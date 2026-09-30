@@ -15,3 +15,4 @@ ports_description:
   9117/tcp: "WEB Config"
 map:
   - addon_config:rw
+image: ghcr.io/dmitrykadyshev/addon-jackett
